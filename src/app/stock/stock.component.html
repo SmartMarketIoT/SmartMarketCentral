@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+
+<div class="p-grid">
+  <div class="p-col-4"></div>
+  <div class="p-col-4">
+
+    <h1 class="p-text-center">Estoque Smart Market</h1>
+
+  </div>
+  <div class="p-col-4"></div>
+
+  <div class="p-col-4"></div>
+  <div class="p-col-4"></div>
+  <div class="p-col-4"><p-selectButton [options]="menuOptions" [(ngModel)]="selectedType" (click)=change()></p-selectButton></div>
+
+</div>
+
+
+
+
+
+
+<div [hidden]="!edited">
+<p-dataView #dv [value]="products" [paginator]="true" [rows]="3" filterBy="brand">
+
+  <ng-template let-product pTemplate="listItem">
+      <div class="p-col-6 div-grid">
+
+        <img class="p-shadow-4" src="{{product.imgSrc}}">
+
+          <div class="p-item-title">{{product.name}}</div>
+
+
+          <div class="p-item-grid">Quantidade no estoque: {{product.count}}</div>
+          <div class="p-item-grid">Preço unitário: {{product.price | currency:'BRL':true:'1.2-2'}}</div>
+
+          <div class="p-item-grid"><i class="pi pi-tag"></i> {{product.category}}</div>
+          <div class="p-item-status">{{product.status | uppercase}} </div>
+
+        </div>
+
+  </ng-template>
+
+</p-dataView>
+
+</div>
+
+<div [hidden]="edited">
+    <div class="p-grid">
+      <div class="p-col-12 p-xl-2 p-lg-2 p-md-10 p-sm-1" *ngFor="let product of stockService.stock">
+
+            <div class="p-shadow-10">
+              <p-card>
+                  <p-header>
+                    <img src="{{product.imgSrc}}">
+                  </p-header>
+
+                  <div class="p-text-center p-text-bold">{{product.name}}</div>
+                  <div>
+                    <p>Preço da unidade: R$ {{product.price}}</p>
+                    <p>Quantidade no estoque: {{product.count}}</p>
+                  </div>
+                  <p-footer>
+                    <div class="p-text-right title-footer">código do produto (helix): {{product.id}}</div>
+                  </p-footer>
+
+            </p-card>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,20 @@
+<nav>
+
+        <p-sidebar [(visible)]="display">
+
+          <ul>
+            <li><div class="p-text-uppercase p-text-bold navbar-title">CENTRAL SMART MARKET</div></li>
+            <li><a class="navbar-toogle" routerLink="/home" (click)="display = false"><i class="pi pi-user p-text-uppercase p-text-bold">  HOME</i></a></li>
+            <li><a class="navbar-toogle" routerLink="/stock" (click)="display = false"><i class="pi pi-briefcase p-text-uppercase p-text-bold">  ESTOQUE</i></a></li>
+            <li><a class="navbar-toogle" routerLink="/purchases" (click)="display = false"><i class="pi pi-chart-line p-text-uppercase p-text-bold">  COMPRAS</i></a></li>
+            <li><a class="navbar-toogle" routerLink="/login" (click)="display = false"><i class="pi pi-sign-out p-text-uppercase p-text-bold">  SAIR</i></a></li>
+          </ul>
+        </p-sidebar>
+
+        <button pButton type="button" (click)="display = true" icon="pi pi-align-justify" class="p-button-outlined"></button>
+
+</nav>
+
+
+
+
