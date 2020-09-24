@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="p-grid">
+  <div class="p-col">
+
+    <h1 class="p-text-center">Dashboard de compras</h1>
+
+  </div>
+
+</div>
+
+<div class="p-grid">
+
+  <div class="p-col-6">
+    <div class="p-shadow-22">
+      <p>Produtos mais vendidos por categoria</p>
+      <p-chart type="pie" [data]="dataDonut"></p-chart>
+    </div>
+  </div>
+
+  <div class="p-col-6">
+    <div class="p-shadow-22">
+      <p>Compras realizadas no ano</p>
+      <p-chart type="line" [data]="dataLine"></p-chart>
+    </div>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

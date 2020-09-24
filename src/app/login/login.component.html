@@ -1,0 +1,44 @@
+<div class="p-grid">
+
+   <div class="p-col"></div>
+
+    <div class="p-col">
+
+      <div class="container">
+
+                  <div class="p-shadow-7">
+
+
+                    <img class="img-logo" src="assets/smss.png">
+
+                    <p class="subtitle-text">Central <i>Smart Market</i> - Plataforma de gerenciamento</p>
+
+                        <form>
+                            <div class="p-fluid">
+                              <div class="p-field">
+                                  <label for="firstname1" >Login</label>
+                                  <input id="firstname1" type="text" placeholder="email" [(ngModel)]="user" name="user" pInputText>
+                              </div>
+                              <div class="p-field">
+                                  <label for="lastname1" >Senha</label>
+                                  <input id="lastname1" type="password" placeholder="password" name="senha" [(ngModel)]="senha" name="user" pInputText>
+                              </div>
+                            </div>
+                            <button pButton type="button" label="Login" (click)="autenticar()"></button>
+
+                            <p-toast position="center"></p-toast>
+
+
+                        </form>
+
+                  </div>
+
+      </div>
+    </div>
+
+    <div class="p-col"></div>
+
+</div>
+
+
+<app-footer></app-footer>
